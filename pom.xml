@@ -12,7 +12,7 @@
 
     <groupId>restlet</groupId>
     <artifactId>cars</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>3.0.1</version>
 
     <repositories>
         <repository>
@@ -24,7 +24,8 @@
 
     <scm>
         <developerConnection>scm:git:git://github.com/adam-kovacs/basic_car_service_api</developerConnection>
-    </scm>
+      <tag>cars-3.0.1</tag>
+  </scm>
 
     <build>
         <plugins>
