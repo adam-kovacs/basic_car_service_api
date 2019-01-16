@@ -12,7 +12,7 @@
 
     <groupId>restlet</groupId>
     <artifactId>cars</artifactId>
-    <version>5.2.2-SNAPSHOT</version>
+    <version>5.3.1</version>
 
     <repositories>
         <repository>
@@ -24,7 +24,7 @@
 
     <scm>
         <developerConnection>scm:git:git://github.com/adam-kovacs/basic_car_service_api</developerConnection>
-      <tag>cars-5.0.1</tag>
+      <tag>mvnrelased</tag>
   </scm>
 
     <build>
