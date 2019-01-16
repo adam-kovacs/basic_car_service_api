@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>restlet</groupId>
   <artifactId>cars</artifactId>
-  <version>5.5.1</version>
+  <version>5.6.1</version>
   <scm>
     <developerConnection>scm:git:git://github.com/adam-kovacs/basic_car_service_api</developerConnection>
     <tag>mvnrelased</tag>
@@ -411,12 +411,20 @@
       </testResource>
     </testResources>
     <directory>target</directory>
-    <finalName>cars-5.5.1</finalName>
+    <finalName>cars-5.6.1</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <version>2.5.3</version>
         <extensions>false</extensions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <extensions>false</extensions>
+        <configuration>
+          <release>10</release>
+        </configuration>
       </plugin>
     </plugins>
   </build>

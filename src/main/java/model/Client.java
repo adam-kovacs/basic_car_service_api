@@ -5,9 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.restlet.ext.oauth.GrantType;
 import org.restlet.ext.oauth.ResponseType;
 
-import javax.persistence.*;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Transient;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -98,8 +103,9 @@ public class Client implements org.restlet.ext.oauth.internal.Client {
 
     public boolean convertRedirectUris() {
         if (this.redirectUris == null) {
+            this.redirectUris = new String[redirectUrisList.size()];
             try {
-                this.redirectUris = redirectUrisList.toArray(String[]::new);
+                this.redirectUris = redirectUrisList.toArray(this.redirectUris);
             } catch (Exception e) {
                 e.printStackTrace();
                 return false;
