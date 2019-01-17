@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'BUILD IS RUNNING YO'
-                sh dockerd -v
+                sh 'dockerd -v'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
