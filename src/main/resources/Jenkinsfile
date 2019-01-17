@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('Info') {
             steps {
-                sh echo 'PIPELINE STARTED YO'
+                step {
+                    sh echo 'PIPELINE STARTED YO'
+                }
             }
         }
         stage('Build') {
