@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Transient;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -51,7 +52,7 @@ public class Client implements org.restlet.ext.oauth.internal.Client {
         this.properties = properties;
         this.propertiesJson = new ObjectMapper().writeValueAsString(properties);
         this.redirectUris = redirectUris;
-        this.redirectUrisList = List.of(redirectUris);
+        this.redirectUrisList = new ArrayList<String>();
     }
 
     public Client() {
