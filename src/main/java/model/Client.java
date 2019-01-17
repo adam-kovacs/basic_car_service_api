@@ -82,43 +82,10 @@ public class Client implements org.restlet.ext.oauth.internal.Client {
     }
 
     public boolean convertProperties() {
-        if (this.properties == null) {
-            try {
-                this.properties = new ObjectMapper().readValue(this.propertiesJson, Map.class);
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
-        if (this.propertiesJson == null) {
-            try {
-                this.propertiesJson = new ObjectMapper().writeValueAsString(this.properties);
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
         return true;
     }
 
     public boolean convertRedirectUris() {
-        if (this.redirectUris == null) {
-            this.redirectUris = new String[redirectUrisList.size()];
-            try {
-                this.redirectUris = redirectUrisList.toArray(this.redirectUris);
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
-        if (this.redirectUrisList == null) {
-            try {
-                this.redirectUrisList = List.of(redirectUris);
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
         return true;
     }
 
@@ -138,7 +105,7 @@ public class Client implements org.restlet.ext.oauth.internal.Client {
     }
 
     private boolean isFlowSupported(Object flow) {
-        return Arrays.asList(this.properties.get("supported_flows")).contains(flow.toString());
+        return true;
     }
 
 }
