@@ -6,18 +6,19 @@ pipeline {
         }
     }
     stages {
+
         stage('Info') {
             steps {
-                step {
-                    sh echo 'PIPELINE STARTED YO'
-                }
+                echo 'PIPELINE STARTED YO'
             }
         }
+
         stage('Build') {
             steps {
                 sh dockerd
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+
     }
 }
