@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage('Info') {
+            steps {
+                sh echo 'PIPELINE STARTED YO'
+            }
+        }
         stage('Build') {
             steps {
                 sh dockerd
