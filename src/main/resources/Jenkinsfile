@@ -27,6 +27,7 @@ pipeline {
     post {
         success {
             echo "Everything finished successfully"
+            sh 'git pull'
             sh 'git describe --abbrev=0'
         }
         failure {
