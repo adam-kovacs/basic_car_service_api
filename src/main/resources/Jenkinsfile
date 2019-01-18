@@ -20,6 +20,7 @@ pipeline {
                 echo 'Build running'
                 sh 'mvn -e -B -DskipTests clean package -Dproject.upload.directory=./target'
                 sh 'pwd'
+                sh 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout'
             }
         }
 
