@@ -28,9 +28,11 @@ pipeline {
     post {
         success {
             echo "Everything finished successfully"
+            sh 'git describe --abbrev=0'
         }
         failure {
             echo " Build failed miserably"
+            sh 'git describe --abbrev=0'
         }
     }
 
