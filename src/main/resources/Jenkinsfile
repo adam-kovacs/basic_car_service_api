@@ -19,6 +19,7 @@ pipeline {
             steps {
                 echo 'Build running'
                 sh 'mvn -e -B -DskipTests clean package -Dproject.upload.directory=./target'
+                sh 'pwd'
             }
         }
 
