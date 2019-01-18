@@ -19,16 +19,18 @@ pipeline {
             steps {
                 echo 'Build running'
                 sh 'mvn -e -B -DskipTests clean package -Dproject.upload.directory=./target'
-                sh 'pwd'
-                sh 'mvn -q -Dexec.executable="echo" -Dexec.args=\'${project.version}\' --non-recursive exec:exec'
+                sh 'RELEASE_VERSION = mvn -q -Dexec.executable="echo" -Dexec.args=\'${project.version}\' --non-recursive exec:exec'
             }
         }
 
     }
 
     post {
-        always {
+        success {
             echo "Everything finished successfully"
+        }
+        failure {
+            echo " Build failed miserably"
         }
     }
 
